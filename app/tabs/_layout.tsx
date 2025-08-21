@@ -12,8 +12,14 @@ import { Stack } from "expo-router";
 
 export default function AppLayout() {
   return (
-    <Stack>
-      <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+    <Stack
+        screenOptions={{
+          headerShown: false,
+          gestureEnabled: true,
+          gestureDirection: "horizontal"
+        }}
+    >
+      <Stack.Screen name="(auth)" options={{headerShown: false }} />
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
     </Stack>
   );

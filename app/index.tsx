@@ -34,80 +34,77 @@ const data: Item[] = [
 ];
 const width = Dimensions.get("window").width;
 
-export default function Home() {
+export default function WelcomeScreen() {
 
   const ref = React.useRef<ICarouselInstance>(null);
   const progress = useSharedValue<number>(0);
 
   const onPressPagination = (index: number) => {
     ref.current?.scrollTo({
-      /**
-       * Calculate the difference between the current index and the target index
-       * to ensure that the carousel scrolls to the nearest index
-       */
       count: index - progress.value,
       animated: true,
     });
   };
 
   return (
-      <SafeAreaView className="flex-1">
+      <SafeAreaView className="flex-1 bg-white">
         <ImageBackground
-            source={require('../assets/images/pes.jpg')}
+            source={require('../assets/images/pes.avif')}
             resizeMode="cover"
             className="flex-1"
         >
           <View className="flex-1 justify-end">
-            {/* justify-end прижмёт содержимое вниз */}
 
-            <Box className="box-border bg-white rounded-t-3xl p-6 gap-4 items-center justify-center">
-              <Pagination.Basic
-                  progress={progress}
-                  data={data}
-                  dotStyle={{
-                    width: 25,
-                    backgroundColor: "white",
-                    borderRadius: 10,
-                    borderWidth: 1,
-                    borderColor: "#E0E0E1"
-                  }}
-                  activeDotStyle={{
-                    backgroundColor: "#FFBC11",
-                    borderColor: "#FFBC11"
-                  }}
-                  containerStyle={{
-                    gap: 5,
-                    marginTop: 10
-                  }}
-                  onPress={onPressPagination}
-              />
-              <Carousel
-                  ref={ref}
-                  loop={false}
-                  width={width}
-                  height={width / 2}
-                  data={data}
-                  onProgressChange={progress}
-                  renderItem={({ item }) => (
-                      <Card variant="ghost" className="items-center justify-center">
-                        <Heading size="2xl" className="text-center mb-4 font-rubik">
-                          {item.title}
-                        </Heading>
-                        <Text size="lg" className="text-center font-comfortaa">
-                          {item.subtitle}
-                        </Text>
-                      </Card>
-                  )}
-              />
-
+            <Box className="bg-white rounded-t-3xl p-6 pt-10 flex flex-col items-center">
+              <View className="w-full">
+                <Pagination.Basic
+                    progress={progress}
+                    data={data}
+                    dotStyle={{
+                      width: 25,
+                      backgroundColor: "white",
+                      borderRadius: 10,
+                      borderWidth: 1,
+                      borderColor: "#E0E0E1"
+                    }}
+                    activeDotStyle={{
+                      backgroundColor: "#FFBC11",
+                      borderRadius: 10,
+                    }}
+                    containerStyle={{
+                      gap: 5,
+                    }}
+                    onPress={onPressPagination}
+                />
+              </View>
+              <View className="w-full items-center justify-center">
+                <Carousel
+                    ref={ref}
+                    loop={false}
+                    width={width}
+                    height={width / 2}
+                    data={data}
+                    onProgressChange={progress}
+                    renderItem={({ item }) => (
+                        <Card variant="ghost" className="items-center justify-center h-full">
+                          <Heading size="2xl" className="text-center mb-4 font-istok">
+                            {item.title}
+                          </Heading>
+                          <Text size="lg" className="text-center font-comfortaa">
+                            {item.subtitle}
+                          </Text>
+                        </Card>
+                    )}
+                />
+              </View>
               <Link href="/tabs" asChild>
                 <Pressable
-                    className="w-full bg-background-basicYellow p-4 rounded-xl">
-                  <Text size="xl" bold={true} className="font-rubik text-center color-white">Начать</Text>
+                    className="w-full bg-background-basicYellow p-3 rounded-xl">
+                  <Text size="2xl" bold={true} className="font-istok text-center color-white">Начать</Text>
                 </Pressable>
               </Link>
-
             </Box>
+
           </View>
         </ImageBackground>
       </SafeAreaView>

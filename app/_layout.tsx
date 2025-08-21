@@ -9,32 +9,29 @@ import * as SplashScreen from "expo-splash-screen";
 import { useEffect, useState } from "react";
 import { GluestackUIProvider } from "@/components/ui/gluestack-ui-provider";
 import { useColorScheme } from "@/components/useColorScheme";
-import { Slot } from "expo-router";
+import { Stack } from 'expo-router';
 
 import "../global.css";
+import WelcomeScreen from '@/app/index';
 
 export {
-  // Catch any errors thrown by the Layout component.
   ErrorBoundary,
 } from "expo-router";
-
-// export const unstable_settings = {
-//   // Ensure that reloading on `/modal` keeps a back button present.
-//   initialRouteName: "gluestack",
-// };
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
+
   const [loaded, error] = useFonts({
     Comfortaa: require("@/assets/fonts/Comfortaa.ttf"),
     Rubik: require("@/assets/fonts/Rubik.ttf"),
+    Istok: require("@/assets/fonts/IstokWeb.ttf"),
     ...FontAwesome.font,
   });
 
   const [styleLoaded, setStyleLoaded] = useState(false);
-  // Expo Router uses Error Boundaries to catch errors in the navigation tree.
+
   useEffect(() => {
     if (error) throw error;
   }, [error]);
@@ -45,14 +42,6 @@ export default function RootLayout() {
     }
   }, [loaded]);
 
-  // useLayoutEffect(() => {
-  //   setStyleLoaded(true);
-  // }, [styleLoaded]);
-
-  // if (!loaded || !styleLoaded) {
-  //   return null;
-  // }
-
   return <RootLayoutNav />;
 }
 
@@ -62,7 +51,15 @@ function RootLayoutNav() {
   return (
     <GluestackUIProvider mode={colorScheme === "dark" ? "dark" : "light"}>
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-        <Slot />
+        <Stack
+            screenOptions={{
+              headerShown: false,
+              gestureEnabled: true,
+              gestureDirection: "horizontal"
+            }}
+        >
+          <Stack.Screen name="index" options={{headerShown: false}} />
+        </Stack>
       </ThemeProvider>
     </GluestackUIProvider>
   );

@@ -1,9 +1,9 @@
-import { View, Text } from 'react-native'
+import { View, Text, SafeAreaView } from 'react-native';
 
 export default function RoleScreen() {
     return (
-        <View>
+        <SafeAreaView>
             <Text>RoleScreen</Text>
-        </View>
+        </SafeAreaView>
     )
 }
