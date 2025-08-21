@@ -162,6 +162,7 @@ module.exports = {
           info: "rgb(var(--color-background-info)/<alpha-value>)",
           light: "#FBFBFB",
           dark: "#181719",
+          basicYellow: "#FFBC11"
         },
         indicator: {
           primary: "rgb(var(--color-indicator-primary)/<alpha-value>)",
@@ -174,6 +175,8 @@ module.exports = {
         body: undefined,
         mono: undefined,
         roboto: ["Roboto", "sans-serif"],
+        rubik: ["Rubik", "sans-serif"],
+        comfortaa: ["Comfortaa", "sans-serif"],
       },
       fontWeight: {
         extrablack: "950",
