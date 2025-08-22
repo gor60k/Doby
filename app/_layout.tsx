@@ -18,7 +18,11 @@ export {
   ErrorBoundary,
 } from "expo-router";
 
-// Prevent the splash screen from auto-hiding before asset loading is complete.
+SplashScreen.setOptions({
+  duration: 1000,
+  fade: true,
+});
+
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {

@@ -10,7 +10,7 @@ export default function Home() {
       <Heading className="font-bold text-2xl">Expo V3</Heading>
       <Divider className="my-[30px] w-[80%]" />
       <Text className="p-4">Example below to use gluestack-ui components.</Text>
-      <EditScreenInfo path="app/(app)/(tabs)/index.tsx" />
+      <EditScreenInfo path="app/(app)/(tabs)/role.tsx" />
     </Center>
   );
 }
