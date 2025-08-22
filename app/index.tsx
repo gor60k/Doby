@@ -86,11 +86,17 @@ export default function WelcomeScreen() {
                     data={data}
                     onProgressChange={progress}
                     renderItem={({ item }) => (
-                        <Card variant="ghost" className="items-center justify-center h-full">
-                          <Heading size="2xl" className="text-center mb-4 font-istok">
+                        <Card
+                            variant="ghost"
+                            className="items-center justify-center h-full"
+                        >
+                          <Heading
+                              size="2xl"
+                              className="text-center mb-4 font-istok"
+                          >
                             {item.title}
                           </Heading>
-                          <Text size="lg" className="text-center font-comfortaa">
+                          <Text className="text-center font-comfortaa text-lg">
                             {item.subtitle}
                           </Text>
                         </Card>
@@ -100,7 +106,12 @@ export default function WelcomeScreen() {
               <Link href="/tabs" asChild>
                 <Pressable
                     className="w-full bg-background-basicYellow p-3 rounded-xl">
-                  <Text size="2xl" bold={true} className="font-istok text-center color-white">Начать</Text>
+                  <Text
+                      size="2xl"
+                      className="text-center color-white font-istok"
+                  >
+                    Начать
+                  </Text>
                 </Pressable>
               </Link>
             </Box>

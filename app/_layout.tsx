@@ -25,8 +25,7 @@ export default function RootLayout() {
 
   const [loaded, error] = useFonts({
     Comfortaa: require("@/assets/fonts/Comfortaa.ttf"),
-    Rubik: require("@/assets/fonts/Rubik.ttf"),
-    Istok: require("@/assets/fonts/IstokWeb.ttf"),
+    IstokWeb: require("@/assets/fonts/IstokWeb.ttf"),
     ...FontAwesome.font,
   });
 
