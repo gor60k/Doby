@@ -6,13 +6,12 @@ import {
 } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { GluestackUIProvider } from "@/components/ui/gluestack-ui-provider";
 import { useColorScheme } from "@/components/useColorScheme";
 import { Stack } from 'expo-router';
 
 import "../global.css";
-import WelcomeScreen from '@/app/index';
 
 export {
   ErrorBoundary,
@@ -32,8 +31,6 @@ export default function RootLayout() {
     IstokWeb: require("@/assets/fonts/IstokWeb.ttf"),
     ...FontAwesome.font,
   });
-
-  const [styleLoaded, setStyleLoaded] = useState(false);
 
   useEffect(() => {
     if (error) throw error;

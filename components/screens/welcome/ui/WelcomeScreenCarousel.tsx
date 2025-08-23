@@ -12,7 +12,6 @@ interface WelcomeScreenCarouselProps {
   width: number;
 }
 
-
 export default function WelcomeScreenCarousel({ data, width }: WelcomeScreenCarouselProps) {
 
   const ref = React.useRef<ICarouselInstance>(null);
