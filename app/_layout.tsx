@@ -5,6 +5,7 @@ import {
   ThemeProvider,
 } from "@react-navigation/native";
 import { useFonts } from "expo-font";
+import { IstokWeb_700Bold } from '@expo-google-fonts/istok-web';
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import { GluestackUIProvider } from "@/components/ui/gluestack-ui-provider";
@@ -12,6 +13,7 @@ import { useColorScheme } from "@/components/useColorScheme";
 import { Stack } from 'expo-router';
 
 import "../global.css";
+import { Comfortaa_300Light } from '@expo-google-fonts/comfortaa';
 
 export {
   ErrorBoundary,
@@ -27,8 +29,8 @@ SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
 
   const [loaded, error] = useFonts({
-    Comfortaa: require("@/assets/fonts/Comfortaa.ttf"),
-    IstokWeb: require("@/assets/fonts/IstokWeb.ttf"),
+    IstokBold: IstokWeb_700Bold,
+    ComfortaaLight: Comfortaa_300Light,
     ...FontAwesome.font,
   });
 
@@ -49,8 +51,12 @@ function RootLayoutNav() {
   const colorScheme = useColorScheme();
 
   return (
-    <GluestackUIProvider mode={colorScheme === "dark" ? "dark" : "light"}>
-      <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
+    <GluestackUIProvider
+        // mode={colorScheme === "dark" ? "dark" : "light"}
+    >
+      <ThemeProvider
+          value={colorScheme === "dark" ? DarkTheme : DefaultTheme}
+      >
         <Stack
             screenOptions={{
               headerShown: false,

@@ -174,10 +174,6 @@ module.exports = {
         heading: undefined,
         body: undefined,
         mono: undefined,
-        roboto: ["Roboto", "sans-serif"],
-        rubik: ["Rubik", "sans-serif"],
-        comfortaa: ["Comfortaa", "sans-serif"],
-        istok: ["IstokWeb", "sans-serif"],
       },
       fontWeight: {
         extrablack: "950",

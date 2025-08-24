@@ -63,11 +63,19 @@ export default function WelcomeScreenCarousel({ data, width }: WelcomeScreenCaro
                   >
                     <Heading
                         size="2xl"
-                        className="text-center mb-4 font-istok"
+                        className=" text-center mb-4 color-black"
+                        style={{
+                          fontFamily: 'IstokBold'
+                        }}
                     >
                       {item.title}
                     </Heading>
-                    <Text className="text-center font-comfortaa text-lg">
+                    <Text
+                        className="text-center text-lg color-[#5F5F63]"
+                        style={{
+                          fontFamily: 'ComfortaaLight'
+                        }}
+                    >
                       {item.subtitle}
                     </Text>
                   </Card>

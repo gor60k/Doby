@@ -14,6 +14,8 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "@expo-google-fonts/comfortaa": "^0.4.1",
+    "@expo-google-fonts/istok-web": "^0.4.0",
     "@expo/html-elements": "^0.4.2",
     "@expo/vector-icons": "^14.1.0",
     "@gluestack-ui/accordion": "^1.0.8",
@@ -52,6 +54,7 @@
     "expo": "53.0.22",
     "expo-blur": "~14.1.5",
     "expo-constants": "~17.1.7",
+    "expo-dev-client": "~5.2.4",
     "expo-font": "~13.3.2",
     "expo-haptics": "~14.1.4",
     "expo-linking": "~7.1.7",
